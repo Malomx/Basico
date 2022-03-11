@@ -1,15 +1,13 @@
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
 
-lienzo.beginPath();
-lienzo.strokeStyle= "blue";
-lienzo.moveTo(50,10);
-lienzo.lineTo(250, 2);
-lienzo.stroke();
-lienzo.closePath();
 
-lienzo.beginPath();
-lienzo.strokeStyle= "red";
-lienzo.moveTo(100,10);
-lienzo.lineTo(290, 200);
-lienzo.stroke();
+function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
+    {
+        lienzo.beginPath();
+        lienzo.strokeStyle= color;
+        lienzo.moveTo(xinicial,yinicial);
+        lienzo.lineTo(xfinal, yfinal);
+        lienzo.stroke();
+        lienzo.closePath();
+    }
