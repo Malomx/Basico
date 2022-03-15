@@ -1,3 +1,7 @@
+var texto= document.getElementById("Textito");
+var boton= document.getElementById("Botoncito");
+boton.addEventListener("click",dibujoporClick);
+
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
 var lineas = 30,l=0,x1,y1,x2,y2;
@@ -31,4 +35,6 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
         lienzo.stroke();
         lienzo.closePath();
     }
-    
+function dibujoporClick(){
+    alert("No me toques eso!");
+}
