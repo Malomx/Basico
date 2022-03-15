@@ -1,10 +1,34 @@
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
-var x1,y1,x2,y2;
-dibujarLinea("pink",10,300,220,10);
-dibujarLinea("blue",220,10,150,55);
+var lineas = 30,l=0,x1,y1,x2,y2;
 
-
+while(l < lineas){
+    x1=0,y1=300-(l*10),x2=10*(l+1),y2=0;
+    dibujarLinea("red",x1,y1,x2,y2);
+    l=l+1;
+}
+l=0;
+while(l < lineas){
+    x1=0,y1=10*l,x2=10*(l+1),y2=300;
+    dibujarLinea("green",x1,y1,x2,y2);
+    l=l+1;
+}
+l=0;
+while(l < lineas){
+    x1=300,y1=l*10,x2=300-(l+1)*10,y2=300;
+    dibujarLinea("blue",x1,y1,x2,y2);
+    l=l+1;
+}
+l=0;
+while(l < lineas){
+    x1=l*10,y1=0,x2=300,y2=10*(l+1);
+    dibujarLinea("yellow",x1,y1,x2,y2);
+    l=l+1;
+}
+dibujarLinea("black",0,0,0,300);
+dibujarLinea("black",300,300,300,0);
+dibujarLinea("black",0,300,300,300);
+dibujarLinea("black",0,0,300,0);
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
     {
         lienzo.beginPath();
@@ -15,12 +39,3 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
         lienzo.closePath();
     }
     
-for (var i=0;i<300;i++)
-{
-    x1=0;y1=i*10; x2=i*10; y2=300;
-    dibujarLinea("red",x1,y1,x2,y2);
-    while (i<=300){
-    x1=i*10;y1=0; x2=300; y2=i*10;
-    dibujarLinea("green",x1,y1,x2,y2);
-    }
-}
