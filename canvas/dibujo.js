@@ -25,10 +25,10 @@ while(l < lineas){
     dibujarLinea("yellow",x1,y1,x2,y2);
     l=l+1;
 }
-dibujarLinea("black",0,0,0,300);
-dibujarLinea("black",300,300,300,0);
-dibujarLinea("black",0,300,300,300);
-dibujarLinea("black",0,0,300,0);
+dibujarLinea("black",1,1,1,299);
+dibujarLinea("black",299,299,299,1);
+dibujarLinea("black",1,299,299,299);
+dibujarLinea("black",1,1,299,1);
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
     {
         lienzo.beginPath();
