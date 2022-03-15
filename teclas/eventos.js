@@ -12,21 +12,23 @@ var lienzo = d.getContext("2d");
 
 function dibujaTeclado(evento)
 {
-    if(evento.keyCode == teclas.UP)
+    switch(evento.keyCode)
     {
-        console.log("Vamoh' pa'rriba");
-    }
-    if(evento.keyCode == teclas.DOWN)
-    {
-        console.log("Vamoh' pa'bajo");
-    }
-    if(evento.keyCode == teclas.LEFT)
-    {
-        console.log("Vamoh' pa'la Izquierda");
-    }
-    if(evento.keyCode == teclas.RIGHT)
-    {
-        console.log("Vamoh' pa'lah deresha");
-    }
+        case teclas.UP:
+            console.log("Vamoh' pa'rriba");
+        break;    
+        case teclas.DOWN:
+            console.log("Vamoh' pa'bajo");
+        break;
+        case teclas.LEFT:
+            console.log("Vamoh' pa'la Izquierda");
+        break;
+        case teclas.RIGHT:
+            console.log("Vamoh' pa'la deresha");
+        break;
+        default:
+            console.log("Otra tecla");
+            break;
 
+    }
 }
