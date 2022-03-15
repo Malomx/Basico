@@ -4,26 +4,27 @@ boton.addEventListener("click",dibujoporClick);
 
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
+var ancho =d.width;
 
 function dibujoporClick(){
-    var txt = parseInt(texto.value);
-    lineas = txt;
+    lineas = parseInt(texto.value);
     var lineas,l=0,x1,y1,x2,y2;
+    var esp = ancho / lineas;
 
 for(l=0;l < lineas;l++){
-    x1=0,y1=300-(l*10),x2=10*(l+1),y2=0;
+    x1=0,y1=ancho-(l*esp),x2=esp*(l+1),y2=0;
     dibujarLinea("red",x1,y1,x2,y2);
 }
 for(l=0;l < lineas;l++){
-    x1=0,y1=10*l,x2=10*(l+1),y2=300;
+    x1=0,y1=esp*l,x2=esp*(l+1),y2=ancho;
     dibujarLinea("green",x1,y1,x2,y2);
 }
 for(l=0;l < lineas;l++){
-    x1=300,y1=l*10,x2=300-(l+1)*10,y2=300;
+    x1=ancho,y1=l*esp,x2=ancho-(l+1)*esp,y2=ancho;
     dibujarLinea("blue",x1,y1,x2,y2);
 }
 for(l=0;l < lineas;l++){
-    x1=l*10,y1=0,x2=300,y2=10*(l+1);
+    x1=l*esp,y1=0,x2=ancho,y2=esp*(l+1);
     dibujarLinea("yellow",x1,y1,x2,y2);
 }
 
