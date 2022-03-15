@@ -4,7 +4,11 @@ boton.addEventListener("click",dibujoporClick);
 
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
-var lineas = 30,l=0,x1,y1,x2,y2;
+
+function dibujoporClick(){
+    var txt = parseInt(texto.value);
+    lineas = txt;
+    var lineas,l=0,x1,y1,x2,y2;
 
 for(l=0;l < lineas;l++){
     x1=0,y1=300-(l*10),x2=10*(l+1),y2=0;
@@ -22,10 +26,15 @@ for(l=0;l < lineas;l++){
     x1=l*10,y1=0,x2=300,y2=10*(l+1);
     dibujarLinea("yellow",x1,y1,x2,y2);
 }
+
+}
 dibujarLinea("black",1,1,1,299);
 dibujarLinea("black",299,299,299,1);
 dibujarLinea("black",1,299,299,299);
 dibujarLinea("black",1,1,299,1);
+
+
+
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
     {
         lienzo.beginPath();
@@ -35,6 +44,4 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
         lienzo.stroke();
         lienzo.closePath();
     }
-function dibujoporClick(){
-    alert("No me toques eso!");
-}
+
