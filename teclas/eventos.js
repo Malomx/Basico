@@ -7,24 +7,33 @@ var teclas = {
 };
 //console.log (teclas);
 
-var d=document.getElementById("Dibuja");
-var lienzo = d.getContext("2d");
+var cuadrito = document.getElementById("Dibuja");
+var papel = cuadrito.getContext("2d");
+var x=150,y=150;
+
+dibujaLinea("red",149,149,151,151,papel);
 
 function dibujaTeclado(evento)
 {
+    var colorsito="blue";
+    var mov = 10;
     switch(evento.keyCode)
     {
         case teclas.UP:
-            console.log("Vamoh' pa'rriba");
+            dibujaLinea(colorsito, x, y, x, y - mov, papel);
+            y  = y - mov;
         break;    
         case teclas.DOWN:
-            console.log("Vamoh' pa'bajo");
+            dibujaLinea(colorsito, x, y, x, y + mov, papel);
+            y = y + mov;
         break;
         case teclas.LEFT:
-            console.log("Vamoh' pa'la Izquierda");
+            dibujaLinea(colorsito, x, y, x - mov, y, papel);
+            x = x - mov;
         break;
         case teclas.RIGHT:
-            console.log("Vamoh' pa'la deresha");
+            dibujaLinea(colorsito, x, y, x + mov, y, papel);
+            x = x + mov;
         break;
         default:
             console.log("Otra tecla");
@@ -32,3 +41,13 @@ function dibujaTeclado(evento)
 
     }
 }
+function dibujaLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo)
+    {
+        lienzo.beginPath();
+        lienzo.strokeStyle= color;
+        lienzo.lineWidth = 3;
+        lienzo.moveTo(xinicial,yinicial);
+        lienzo.lineTo(xfinal, yfinal);
+        lienzo.stroke();
+        lienzo.closePath();
+    }
